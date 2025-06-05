@@ -1,4 +1,6 @@
-source $HOME/.config/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
+export XDG_CONFIG_HOME=$HOME/.config
+
+source $XDG_CONFIG_HOME/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
 
 # Start zoxide 
 eval "$(zoxide init zsh)"
@@ -57,11 +59,11 @@ case "$ARCH" in
 esac
 
 # Universal sourcing (if files exist)
-[[ -f "$HOME/.config/zsh/fzf.zsh" ]] && source "$HOME/.config/zsh/fzf.zsh"
-[[ -f "$HOME/.config/zsh/anaconda.zsh" ]] && source "$HOME/.config/zsh/anaconda.zsh"
+[[ -f "$XDG_CONFIG_HOME/zsh/fzf.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/fzf.zsh"
+[[ -f "$XDG_CONFIG_HOME/zsh/anaconda.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/anaconda.zsh"
 
 # Machine-specific configuration
-[[ -f "$HOME/.config/env.zsh" ]] && source "$HOME/.config/env.zsh"
+[[ -f "$XDG_CONFIG_HOME/env.zsh" ]] && source "$XDG_CONFIG_HOME/env.zsh"
 
 # Aliases
 alias g='git' 
@@ -70,4 +72,4 @@ alias la='ls -la'
 # alias z='zoxide'
 
 # Must be at the end.
-source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
