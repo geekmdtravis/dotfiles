@@ -69,7 +69,10 @@ esac
 alias g='git' 
 alias ll='ls -l'
 alias la='ls -la' 
-# alias z='zoxide'
+alias gd='git difftool'
+alias ga='git add'
+alias gc='git commit'
+alias gs='git status'
 
 # Must be at the end.
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
