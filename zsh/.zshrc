@@ -63,6 +63,7 @@ esac
 [[ -f "$XDG_CONFIG_HOME/zsh/anaconda.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/anaconda.zsh"
 
 # Machine-specific configuration
+export PATH="$HOME/.local/bin:$PATH"
 [[ -f "$XDG_CONFIG_HOME/env.zsh" ]] && source "$XDG_CONFIG_HOME/env.zsh"
 
 # Aliases
