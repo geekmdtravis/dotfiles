@@ -1,0 +1,10 @@
+auto-accept-architect: false
+show-diffs: true
+auto-commits: false
+dirty-commits: false
+vim: true
+multiline: true
+model: claude-3-5-sonnet-latest
+weak-model: gpt-4o-mini
+editor-model: claude-3-5-sonnet-latest
+show-model-warnings: false

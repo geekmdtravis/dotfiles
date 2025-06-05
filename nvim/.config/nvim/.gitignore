@@ -1,0 +1,21 @@
+tags
+test.sh
+.luarc.json
+nvim
+spell/
+.aider*
+*.nvim
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+
+# LSP
+.luarc.json
+.luacheck.json
+
+# OS specific
+.DS_Store
+Thumbs.db

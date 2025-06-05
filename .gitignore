@@ -1,0 +1,4 @@
+.aider.*
+.aider/
+!aider/*
+.DS_Store
