@@ -1,4 +1,5 @@
 macos-option-as-alt = true
+font-size = 18
 
 keybind = super+alt+shift+j=ignore
 keybind = super+alt+shift+w=ignore
