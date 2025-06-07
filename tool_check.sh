@@ -36,6 +36,7 @@ TOOLS=(
     "unzip:-v:Archive extraction utility:all"
     "xclip:-version:X11 clipboard tool:Linux"
     "yazi:--version:Terminal file manager:all"
+    "ykman:--version:YubiKey cli tooling:all"
     "zoxide:--version:Smart cd command:all"
     "zsh:--version:Z shell:all"
 )
