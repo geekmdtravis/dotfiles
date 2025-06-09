@@ -1,5 +1,5 @@
 macos-option-as-alt = true
-font-size = 18
+font-size = 16
 
 keybind = super+alt+shift+j=ignore
 keybind = super+alt+shift+w=ignore
@@ -31,13 +31,14 @@ keybind = super+shift+enter=ignore
 keybind = ctrl+shift+tab=ignore
 
 keybind = super+a=ignore
-keybind = super+c=ignore
+keybind = super+c=copy_to_clipboard
 keybind = super+d=ignore
+keybind = super+f=toggle_fullscreen
 keybind = super+k=ignore
 keybind = super+n=ignore
-keybind = super+q=ignore
+keybind = super+q=quit
 keybind = super+t=ignore
-keybind = super+v=ignore
+keybind = super+v=paste_from_clipboard
 keybind = super+w=ignore
 keybind = super+zero=ignore
 
@@ -83,7 +84,3 @@ keybind = shift+home=ignore
 keybind = shift+end=ignore
 keybind = shift+page_up=ignore
 keybind = shift+page_down=ignore
-
-
-
-
