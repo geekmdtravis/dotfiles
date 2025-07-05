@@ -245,6 +245,7 @@ return {
       'clang-format',
       'google-java-format',
       'prettier',
+      'js-debug-adapter', -- For JavaScript/TypeScript/React debugging
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
