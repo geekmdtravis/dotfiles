@@ -17,9 +17,9 @@ rtp:prepend(lazypath)
 require('lazy').setup({
   'hrsh7th/nvim-cmp',
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
-  require 'cfg.plugins.bufferline',
-  require 'cfg.plugins.supermaven',
   -- require 'cfg.plugins.copilot-lua',
+  require 'cfg.plugins.bufferline',
+  require 'cfg.plugins.debug',
   require 'cfg.plugins.fterm',
   require 'cfg.plugins.gitsigns',
   require 'cfg.plugins.langutils.blink-cmp',
@@ -33,6 +33,7 @@ require('lazy').setup({
   require 'cfg.plugins.obsidian',
   require 'cfg.plugins.persistence',
   require 'cfg.plugins.render-markdown',
+  require 'cfg.plugins.supermaven',
   require 'cfg.plugins.telescope',
   require 'cfg.plugins.treesitter',
   require 'cfg.plugins.trouble',
