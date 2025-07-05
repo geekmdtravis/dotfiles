@@ -18,7 +18,8 @@ require('lazy').setup({
   'hrsh7th/nvim-cmp',
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
   require 'cfg.plugins.bufferline',
-  require 'cfg.plugins.copilot-lua',
+  require 'cfg.plugins.supermaven',
+  -- require 'cfg.plugins.copilot-lua',
   require 'cfg.plugins.fterm',
   require 'cfg.plugins.gitsigns',
   require 'cfg.plugins.langutils.blink-cmp',
