@@ -1,81 +1,79 @@
--- debug.lua
---
--- Shows how to use the DAP plugin to debug your code.
---
--- Primarily focused on configuring the debugger for Go, but can
--- be extended to other languages as well. That's why it's called
--- kickstart.nvim and not kitchen-sink.nvim ;)
+local function get_python_path()
+  local venv = os.getenv 'VIRTUAL_ENV'
+  if venv and venv ~= '' then
+    return venv .. '/bin/python'
+  end
+  local conda_prefix = os.getenv 'CONDA_PREFIX'
+  if conda_prefix and conda_prefix ~= '' then
+    return conda_prefix .. '/bin/python'
+  end
+  return vim.fn.exepath 'python3' or vim.fn.exepath 'python'
+end
+
+local dap_keymaps = {
+  {
+    '<Leader>dc',
+    function()
+      require('dap').continue()
+    end,
+    desc = '[D]ebug: [C]ontinue/Start',
+  },
+  {
+    '<Leader>di',
+    function()
+      require('dap').step_into()
+    end,
+    desc = '[D]ebug: [S]tep Into',
+  },
+  {
+    '<Leader>ds',
+    function()
+      require('dap').step_over()
+    end,
+    desc = '[D]ebug: [S]tep Over',
+  },
+  {
+    '<Leader>do',
+    function()
+      require('dap').step_out()
+    end,
+    desc = '[D]ebug: Step [O]ut',
+  },
+  {
+    '<Leader>db',
+    function()
+      require('dap').toggle_breakpoint()
+    end,
+    desc = '[D]ebug: Toggle [B]reakpoint',
+  },
+  {
+    '<Leader>dB',
+    function()
+      require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+    end,
+    desc = '[D]ebug: Set [B]reakpoint Condition',
+  },
+  -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
+  {
+    '<Leader>dS',
+    function()
+      require('dapui').toggle()
+    end,
+    desc = '[D]ebug: See last [S]ession result.',
+  },
+}
 
 return {
-  -- NOTE: Yes, you can install new plugins here!
   'mfussenegger/nvim-dap',
-  -- NOTE: And you can specify dependencies as well
   dependencies = {
-    -- Creates a beautiful debugger UI
-    'rcarriga/nvim-dap-ui',
-
-    -- Required dependency for nvim-dap-ui
-    'nvim-neotest/nvim-nio',
+    'rcarriga/nvim-dap-ui', -- Creates a beautiful debugger UI
+    'nvim-neotest/nvim-nio', -- Required dependency for nvim-dap-ui
 
     -- Add the things you want to ensure are installed
     -- to the ensure_installed list in nvim-dap located
     -- in the nvim-lspconfig.lua file.
-
-    -- Add your own debuggers here
   },
-  keys = {
-    -- Basic debugging keymaps, feel free to change to your liking!
-    {
-      '<Leader>dc',
-      function()
-        require('dap').continue()
-      end,
-      desc = '[D]ebug: [C]ontinue/Start',
-    },
-    {
-      '<Leader>di',
-      function()
-        require('dap').step_into()
-      end,
-      desc = '[D]ebug: [S]tep Into',
-    },
-    {
-      '<Leader>ds',
-      function()
-        require('dap').step_over()
-      end,
-      desc = '[D]ebug: [S]tep Over',
-    },
-    {
-      '<Leader>do',
-      function()
-        require('dap').step_out()
-      end,
-      desc = '[D]ebug: Step [O]ut',
-    },
-    {
-      '<Leader>db',
-      function()
-        require('dap').toggle_breakpoint()
-      end,
-      desc = '[D]ebug: Toggle [B]reakpoint',
-    },
-    {
-      '<Leader>dB',
-      function()
-        require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-      end,
-      desc = '[D]ebug: Set [B]reakpoint Condition',
-    },
-    -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-    {
-      '<Leader>dS',
-      function()
-        require('dapui').toggle()
-      end,
-      desc = '[D]ebug: See last [S]ession result.',
-    },
-  },
+  keys = dap_keymaps,
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
@@ -100,6 +98,34 @@ return {
           disconnect = '⏏',
         },
       },
+    }
+
+    -- Add Python debug adapters and configurations
+    dap.configurations.python = {
+      {
+        type = 'python',
+        request = 'launch',
+        name = 'Launch file',
+        program = '${file}',
+        python = get_python_path,
+        cwd = '${workspaceFolder}',
+        console = 'integratedTerminal',
+      },
+      {
+        type = 'python',
+        request = 'attach',
+        name = 'Attach to process',
+        processId = '${command:pickProcess}',
+        python = get_python_path,
+        cwd = '${workspaceFolder}',
+        console = 'integratedTerminal',
+      },
+    }
+
+    dap.adapters.python = {
+      type = 'executable',
+      command = 'python',
+      args = { '-m', 'debugpy.adapter' },
     }
 
     -- Add JS/TS/React debug adapters and configurations
