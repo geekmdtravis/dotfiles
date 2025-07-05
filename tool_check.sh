@@ -11,6 +11,7 @@ get_platform() {
 PLATFORM=$(get_platform)
 
 TOOLS=(
+    "aider:--version:An open-source LLM coding agent:all"
     "bat:--version:Cat clone with syntax highlighting:all"
     "brew:--version:Homebrew package manager:macOS"
     "fd:--version:Fast find alternative:all"
@@ -18,6 +19,7 @@ TOOLS=(
     "fzf:--version:Fuzzy finder:all"
     # "fzf-git.sh:--version:Fuzzy finder for git:all"
     "gcc:--version:GNU Compiler Collection:all"
+    "gemini:--version:Google Gemini CLI coding agent:all"
     "git:--version:Version control system:all"
     "htop:--version:Interactive process viewer:all"
     "make:--version:Build automation tool:all"
