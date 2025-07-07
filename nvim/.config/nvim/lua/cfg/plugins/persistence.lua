@@ -68,20 +68,20 @@ return {
     })
 
     -- Define key mappings
-    vim.keymap.set('n', '<leader>ps', function()
+    vim.keymap.set('n', '<leader>Ps', function()
       require('persistence').load()
-    end, { desc = 'Load session for current directory' })
+    end, { desc = '[P]ersistance load [s]ession for current directory' })
 
-    vim.keymap.set('n', '<leader>pS', function()
+    vim.keymap.set('n', '<leader>PS', function()
       require('persistence').select()
-    end, { desc = 'Select session to load' })
+    end, { desc = '[P]ersistance select [R]ession to load' })
 
-    vim.keymap.set('n', '<leader>pl', function()
+    vim.keymap.set('n', '<leader>Pl', function()
       require('persistence').load { last = true }
-    end, { desc = 'Load last session' })
+    end, { desc = '[P]ersistance load [l]ast session' })
 
-    vim.keymap.set('n', '<leader>pd', function()
+    vim.keymap.set('n', '<leader>pk', function()
       require('persistence').stop()
-    end, { desc = 'Stop Persistence (session will not be saved on exit)' })
+    end, { desc = '[P]ersistance [k]ill session (no auto-save)' })
   end,
 }

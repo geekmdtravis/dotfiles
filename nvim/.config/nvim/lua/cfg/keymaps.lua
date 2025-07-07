@@ -27,6 +27,6 @@ vim.keymap.set('n', 'n', 'nzz', { desc = 'Scroll down a page and center the curs
 vim.keymap.set('n', 'N', 'Nzz', { desc = 'Scroll up a page and center the cursor' })
 
 -- Text helpers
-vim.keymap.set('n', '<Leader>Pw', 'viw"_dP', { desc = '[P]aste over [w]ord under cursor' })
-vim.keymap.set('n', '<Leader>PW', 'viW"_dP', { desc = '[P]aste over [W]ord under cursor' })
-vim.keymap.set('v', '<Leader>Ps', '"_dP', { desc = '[P]aste over [s]election under cursor' })
+vim.keymap.set('n', '<Leader>pw', 'viw"_dP', { desc = '[p]aste over [w]ord under cursor' })
+vim.keymap.set('n', '<Leader>pW', 'viW"_dP', { desc = '[p]aste over [W]ord under cursor' })
+vim.keymap.set('v', '<Leader>ps', '"_dP', { desc = '[p]aste over [s]election under cursor' })
