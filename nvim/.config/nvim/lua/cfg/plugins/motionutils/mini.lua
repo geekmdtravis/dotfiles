@@ -18,7 +18,7 @@ return { -- Collection of various small independent plugins/modules
 
     require('mini.bufremove').setup()
     vim.keymap.set('n', '<leader>bd', '<CMD>lua require("mini.bufremove").delete()<CR>', {
-      desc = 'Delete Buffer',
+      desc = '[b]uffer [d]elete',
     })
     -- Simple and easy statusline.
     --  You could remove this setup call if you don't like it,
