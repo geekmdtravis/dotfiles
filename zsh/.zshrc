@@ -1,5 +1,11 @@
 export XDG_CONFIG_HOME=$HOME/.config
 
+# Machine-specific configuration
+export PATH="$HOME/.local/bin:$PATH"
+[[ -f "$XDG_CONFIG_HOME/env.zsh" ]] && source "$XDG_CONFIG_HOME/env.zsh"
+
+
+
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
 
 # Start zoxide 
@@ -61,10 +67,6 @@ esac
 # Universal sourcing (if files exist)
 [[ -f "$XDG_CONFIG_HOME/zsh/fzf.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/fzf.zsh"
 [[ -f "$XDG_CONFIG_HOME/zsh/anaconda.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/anaconda.zsh"
-
-# Machine-specific configuration
-export PATH="$HOME/.local/bin:$PATH"
-[[ -f "$XDG_CONFIG_HOME/env.zsh" ]] && source "$XDG_CONFIG_HOME/env.zsh"
 
 # Aliases
 alias g='git' 
