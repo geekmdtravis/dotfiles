@@ -19,3 +19,6 @@ spell/
 # OS specific
 .DS_Store
 Thumbs.db
+
+# Lazy
+lazy-lock.json

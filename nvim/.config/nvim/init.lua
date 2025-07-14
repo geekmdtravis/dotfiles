@@ -30,7 +30,7 @@ require('lazy').setup({
   require 'cfg.plugins.motionutils.mini',
   require 'cfg.plugins.neo-tree',
   require 'cfg.plugins.no-neck-pain',
-  require 'cfg.plugins.obsidian',
+  -- require 'cfg.plugins.obsidian',
   require 'cfg.plugins.persistence',
   require 'cfg.plugins.render-markdown',
   require 'cfg.plugins.supermaven',
