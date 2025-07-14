@@ -196,7 +196,7 @@ exec --no-startup-id feh --bg-scale $HOME/Pictures/arch-minimal-wallpapers/wallp
 # exec --no-srartup-id env XDG_CURRENT_DESKTOP=GNOME
 
 assign [class="Google-chrome"] workspace $ws1
-assign [class="Cursor"] workspace $ws2
+assign [class="ghostty"] workspace $ws2
 assign [class="discord"] workspace $ws9
 assign [class="Signal"] workspace $ws9
 assign [class="steam"] workspace $ws10
