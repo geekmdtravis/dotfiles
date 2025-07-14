@@ -193,6 +193,7 @@ return {
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+    -- local lspconfig = require 'lspconfig'
     local servers = {
       -- clangd = {},
       -- gopls = {},
@@ -206,6 +207,7 @@ return {
       -- But for many setups, the LSP (`ts_ls`) will work just fine
       ts_ls = {},
       --
+      clangd = {},
       cssls = {},
       jdtls = {},
       ruff = {},
@@ -243,6 +245,7 @@ return {
       'stylua', -- Used to format Lua code
       'prettierd',
       'clang-format',
+      'clangd',
       'google-java-format',
       'prettier',
       'js-debug-adapter', -- For JavaScript/TypeScript/React debugging
