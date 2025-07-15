@@ -7,6 +7,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
+export EDITOR="nvim"
 
 # Start zoxide 
 eval "$(zoxide init zsh)"
