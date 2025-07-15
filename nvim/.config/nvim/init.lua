@@ -32,6 +32,7 @@ require('lazy').setup({
   require 'cfg.plugins.no-neck-pain',
   -- require 'cfg.plugins.obsidian',
   require 'cfg.plugins.persistence',
+  require 'cfg.plugins.qmk',
   require 'cfg.plugins.render-markdown',
   require 'cfg.plugins.supermaven',
   require 'cfg.plugins.telescope',
