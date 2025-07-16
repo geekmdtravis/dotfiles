@@ -25,6 +25,7 @@ TOOLS=(
     "make:--version:Build automation tool:all"
     "mas:--version:Mac App Store CLI:macOS"
     "neofetch:--version:System information tool:all"
+    "npm:--version:Node Package Manager:all"
     "nu:--version:Nushell:all"
     "nvim:--version:Neovim text editor:all"
     "nvm:--version:Node Version Manager:all" 
