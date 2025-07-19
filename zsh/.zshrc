@@ -12,16 +12,10 @@ export EDITOR="nvim"
 # Start zoxide 
 eval "$(zoxide init zsh)"
 
-# Start ssh-agent
-eval `ssh-agent`
-
 # Initialize starship prompt
 eval "$(starship init zsh)"
 
-# Use vi mode
-# bindkey -v
-
-# Oh My Zsh plugins
+# TODO: Is this necessary?
 plugins=(git)
 
 # Architecture-specific configurations
@@ -38,6 +32,8 @@ case "$ARCH" in
             export NVM_DIR="$HOME/.nvm"
             source "/opt/homebrew/opt/nvm/nvm.sh"
         fi
+        # TODO: re-evaluate this
+        # eval `ssh-agent`
         ;;
     "x86_64")
         # Intel Mac specific settings
@@ -77,6 +73,9 @@ alias gd='git difftool'
 alias ga='git add'
 alias gc='git commit'
 alias gs='git status'
+
+# Force Emacs keybindings
+bindkey -e
 
 # Must be at the end.
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
