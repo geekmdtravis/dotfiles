@@ -36,6 +36,8 @@ TOOLS=(
     "stow:--version:GNU Stow for managing symlinks:all"
     "tmux:-V:Terminal multiplexer:all"
     "unzip:-v:Archive extraction utility:all"
+    "wl-copy:--version:Wayland clipboard tool:Linux"
+    "wl-paste:--version:Wayland clipboard tool:Linux"
     "xclip:-version:X11 clipboard tool:Linux"
     "yazi:--version:Terminal file manager:all"
     "ykman:--version:YubiKey cli tooling:all"
